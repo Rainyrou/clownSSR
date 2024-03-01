@@ -13,9 +13,10 @@ const getDemoData = createAsyncThunk(
 
 const demoReducer = createSlice({
   name: "demo",
-  initialState: {
-    content: "Default data",
-  },
+  initialState:
+    typeof window !== "undefined"
+      ? (window as any)?.context?.state?.demo
+      : { content: "Default data" },
   reducers: {},
   extraReducers(build) {
     build

@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch: any) => {
 
 const storeDemo: any = connect(mapStateToProps, mapDispatchToProps)(Demo);
 
-storeDemo.getInitProps = (store: any, data?: string) =>
+storeDemo.getInitProps = (store: any, data?: string): void =>
   store.dispatch(getDemoData(data || "This is initialization demo"));
 
 export default storeDemo;

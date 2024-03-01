@@ -13,9 +13,9 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(express.static(path.resolve(process.cwd(), "client_build")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.resolve(process.cwd(), "client_build")));
 
 app.post("/api/getDemoData", (req: Request, res: Response) => {
   res.send({
